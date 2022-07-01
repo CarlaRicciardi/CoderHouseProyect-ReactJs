@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    background-color: rgb(232, 230, 230);
+}
+
+ul {
+    display: flex;
+    gap: 5%;
+    list-style: none;
+}
+
+.logoHeader {
+    width: 5rem;
+    display: grid;
+    margin: 0 6rem;
+}
+
+.navbar{
+    width: 100%;
+}

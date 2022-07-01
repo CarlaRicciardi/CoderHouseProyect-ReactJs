@@ -1,0 +1,26 @@
+.footer {
+    padding: 1rem;
+    margin-top: 30px;
+    background-color: #2f4858;
+    text-align: center;
+    
+}
+
+.footer-p {
+    color: white;
+    text-align: center;
+}
+
+.footer-p a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a .footer-icon {
+    color: #f6ae2d;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.8rem 0.3rem 0 0.3rem;
+    cursor: pointer;
+}
