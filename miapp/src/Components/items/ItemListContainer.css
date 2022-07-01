@@ -14,4 +14,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    color: #2f4858;
+    font-family:sans-serif;
+    font-weight: bold;
 }

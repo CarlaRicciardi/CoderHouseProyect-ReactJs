@@ -1,4 +1,5 @@
 .itemList{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    justify-content: center;
+    grid-gap: 50px;
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './ItemListContainer.css'
+import './ItemCount.css'
 import Item from './Item'
 
 export default function ItemCount({stock, onAdd}) {
@@ -20,11 +21,13 @@ export default function ItemCount({stock, onAdd}) {
 
   return (
     <>
-    <button onClick={remove}>-</button>
-    <p>{count}</p>
-    <button onClick={add}>+</button>
+    <div className='container-quantity'>
+    <button className='btn-quantity' onClick={remove}>-</button>
+    <p className='p-quantity'> {count}</p>
+    <button className='btn-quantity' onClick={add}>+</button>
     <br />
-    <button onClick={() => onAdd(count)}>AGREGAR AL CARRITO</button>
+    <button className='btnComprar' onClick={() => onAdd(count)}>AGREGAR AL CARRITO</button>
+    </div>
     </>
     
   )

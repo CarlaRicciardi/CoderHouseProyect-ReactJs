@@ -23,8 +23,8 @@ export default function NavBar() {
             Productos
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li> <Link to={"/category/superPremium"} className="dropdown-item">Alimentos Super Premium</Link></li>
-            <li> <Link to={"category/premium"}className="dropdown-item">Alimentos Premium</Link></li>
+            <li> <Link to={"/category/perro"} className="dropdown-item">Alimentos para Perros</Link></li>
+            <li> <Link to={"category/gato"}className="dropdown-item">Alimentos para Gatos</Link></li>
             <li className="dropdown-divider"></li>
           </ul>
         </li>
