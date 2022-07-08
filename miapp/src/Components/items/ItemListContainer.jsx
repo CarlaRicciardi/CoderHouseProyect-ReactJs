@@ -55,7 +55,7 @@ export default function ItemListContainer() {
     <>
     <div>
       <Slider />
-      <h2 className='title'>NUESTROS PRODUCTOS</h2>
+      <h2 className='tintle'>NUESTROS PRODUCTOS</h2>
       {loading && "Loading..."}
       {error && "ERROR: algo salio mal"}
       {items && <ItemList items={items} />}

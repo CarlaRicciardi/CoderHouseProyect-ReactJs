@@ -1,18 +1,14 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
-import { cartContext } from '../../context/CartProvider'
-import { useContext } from 'react'
 
 
 export default function ItemDetail({item}) {
 
   function onAdd(count){
     alert("Quiero agregar " + count + " bolsas de " + item.title)
-    addItem(item, count);
+    // addItem(item, count);
   }
-
-  const {addItem} = useContext(cartContext);
 
   
   return (
