@@ -6,8 +6,8 @@ import { cartContext } from '../../context/CartContext';
 
 export default function CartWidget() {
 
-  const {numCarrito} = useContext(cartContext);
-
+  const {cart} = useContext(cartContext);
+  
   return (
     // <button className="cart-icon" >
     //     <ShoppingCartIcon/>
@@ -16,7 +16,7 @@ export default function CartWidget() {
     
     <div>
     <ShoppingCartIcon></ShoppingCartIcon>
-    <span>{numCarrito}</span>
+    <span>{cart.reduce((p, c)=> p + c.quantity ,0) /*p es previous y c es current value, el 0 a lo ultimo es el valor incial. Tecnicamente sumamos todos los quantitys y ya.*/ }</span>
     </div>
   )
 }

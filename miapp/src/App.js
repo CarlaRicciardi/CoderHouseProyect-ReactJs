@@ -9,25 +9,27 @@ import ItemDetailContainer from './Components/items/ItemDetailContainer';
 import Footer from './Components/footer/Footer';
 
 //Context
-import CartContext from './context/CartContext';
+import {CartProvider} from './context/CartContext';
+import Cart from './Components/items/Cart';
 
 
 function App() {
 
   return (
     <>
-    <CartContext>
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />}/>
             <Route path="/category/:idCategory" element={<ItemListContainer />}/>
             <Route path="/item/:idItem" element={<ItemDetailContainer />}/>
+            <Route path="/Cart" element={<Cart/>}/>
             {/* <Route path="*"/> PARA 404*/}
           </Routes>
         <Footer />
       </BrowserRouter>
-    </CartContext>
+    </CartProvider>
     </>
   );
 }
