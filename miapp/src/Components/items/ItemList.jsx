@@ -6,7 +6,7 @@ export default function ItemList({items}) {
   return (
     <div className='itemList row container'>
         {items.map(item =>(
-            <Item className=' col-4' key={item.id} item={item} />
+            <Item className='col-4' key={item.id} item={item} />
         ))
         }
     </div>

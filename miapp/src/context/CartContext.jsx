@@ -27,48 +27,7 @@ export function CartProvider({ children }) {
   }else{
     setCart([...cart, {...item, quantity}])
   }
-
-  console.log('llego')
-  //   const newItem = {
-  //     id: item.id,
-  //     title: item.title,
-  //     description: item.description,
-  //     pictureUrl: item.pictureUrl,
-  //     price: item.price,
-  //     stock: item.stock,
-  //     category: item.category,
-  //     quantity: quantity,
-  //     total: item.price * quantity,
-  //   };
-
-  //   const isInCart = cart.find((product) => product.id === item.id);
-  //   // productoEncontrado devuelve true or false
-
-  //   if (isInCart) {
-  //     setCart(
-  //       cart.map((prod) => {
-  //         if (prod.id === item.id) {
-  //           return {
-  //             ...prod,
-  //             quantity: (prod.quantity += quantity),
-  //             total: quantity * item.price,
-  //           };
-  //           // (...)trae el producto como esta pero modifica la cantidad
-  //         } else {
-  //           return prod;
-  //         }
-  //       })
-  //     );
-  //   } else {
-  //     //si el productoEncontrado es false:
-  //     setCart(
-  //       [...cart, newItem]
-  //       //si el producto no fue encontrado, quiero insetar en mi array un producto nuevo manteniendo lo que ya hay
-  //     );
-  //   }
-
-  //   setNumCarrito(numCarrito + newItem.quantity); //seteo el numerito del carrito
-  //   setPrecioTotalCarrito(precioTotalCarrito + newItem.total); //seteo el total del carrito
+  setPrecioTotalCarrito(precioTotalCarrito + item.price * item.cantidad)
   };
 
   const removeItem = (itemId) => {
@@ -77,9 +36,17 @@ export function CartProvider({ children }) {
     setCart(nuevoArray);
   };
 
+  const total = () => {
+    return cart.reduce((acum, item) => acum = acum + (item.price * item.cantidad), 0);
+ }
+
+const cantidad = () => {
+     return cart.reduce((acum, item) => acum += item.cantidad, 0);
+ } 
+
   return (
     <cartContext.Provider
-      value={{ cart, clear, addItem, removeItem, numCarrito }}
+      value={{ cart, clear, addItem, removeItem, numCarrito, total, cantidad, precioTotalCarrito }}
     >
       {children}
     </cartContext.Provider>

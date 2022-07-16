@@ -5,6 +5,8 @@ import Item from './Item'
 
 export default function ItemCount({stock, onAdd}) {
     const [count, setCount] = useState(1);
+    const [mostrarBotonera, setMostrarBononera] = useState(true);
+
 
 
     const add = () => {

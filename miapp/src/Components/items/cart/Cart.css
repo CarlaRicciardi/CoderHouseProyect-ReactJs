@@ -1,0 +1,35 @@
+.title{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #2f4858;
+    font-family:sans-serif;
+    font-weight: bold;
+}
+
+.cart-container {
+    padding: 0 0 8rem 0;
+}
+
+.ctable-container {
+    border: 0.8px solid var(--primary-color);
+    margin: 1rem .8rem;
+    display: flex;
+    gap: 10rem;
+    font-size: 0.9rem;
+    padding: 1rem 4rem;
+    justify-content: center;
+}
+
+.ctable-item {
+    display: grid;
+}
+
+.ctable-item p {
+    font-size: 1.2rem;
+}
+
+
+.img-cart {
+    width: 5.5rem;
+}

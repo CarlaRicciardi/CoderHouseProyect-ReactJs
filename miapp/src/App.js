@@ -10,7 +10,7 @@ import Footer from './Components/footer/Footer';
 
 //Context
 import {CartProvider} from './context/CartContext';
-import Cart from './Components/items/Cart';
+import Cart from './Components/items/cart/Cart';
 
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
             <Route path="/category/:idCategory" element={<ItemListContainer />}/>
             <Route path="/item/:idItem" element={<ItemDetailContainer />}/>
             <Route path="/Cart" element={<Cart/>}/>
-            {/* <Route path="*"/> PARA 404*/}
           </Routes>
         <Footer />
       </BrowserRouter>
