@@ -39,7 +39,7 @@ export default function Cart() {
             </div>
             <div className='ctable-item'>
               <h3>Eliminar</h3>
-              <HighlightOffIcon className="cart-icon" fontSize="large" 
+              <HighlightOffIcon className="cart-icon" fontSize="large" style={{cursor: 'pointer'}}
               onClick={() => removeItem(item.id)}/>
             </div>
           </div>

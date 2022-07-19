@@ -22,6 +22,7 @@
     font-size: 1.2rem;
     padding: 0.5rem;
     border: 1px solid #f6ae2d;
+    border-radius: 15%;
     cursor: pointer;
     background-color: white;
     margin-top: 1rem;
@@ -32,4 +33,11 @@
     color: white;
     border: none;
     margin-left: 10px;
+}
+
+.boton{
+    color: #2f4858;
+    background-color: #f6ae2d;
+    border-radius: 15%;
+    justify-content: center;
 }

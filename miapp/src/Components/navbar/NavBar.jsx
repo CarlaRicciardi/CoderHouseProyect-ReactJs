@@ -11,7 +11,7 @@ export default function NavBar() {
     <>
     <header>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
+  <div className="container-fluid navv">
     <Link to={"/"}><img src='/assets/img/logo.png' className='logoHeader navbar-brand' alt="logo" /></Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -39,27 +39,7 @@ export default function NavBar() {
     </div>
   </div>
 </nav>
-
-
-
-    {/* <Link to={"/"}><img src='/assets/img/logo.png' classNameName='logoHeader' alt="logo" /></Link>
-        <ul>
-          <Link to={"/"}><li>Productos</li></Link>
-          <li classNameName="nav-item dropdown">
-          <a classNameName="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          </a>
-          <ul title="category" classNameName="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a classNameName="dropdown-item" href="#">Alimentos para perros</a></li>
-            <li><a classNameName="dropdown-item" href="#">Alimentos para gatos</a></li>
-            <li classNameName="dropdown-divider"></li>
-            <li><a classNameName="dropdown-item" href="#">Todos los alimentos</a></li>
-          </ul>
-        </li>
-          <Link to={"/aboutUs"}><li>Sobre Nosotros</li></Link>
-          <Link to={"Contacto"}><li>Contacto</li></Link>
-          <CartWidget />
-        </ul> */}
-    </header>
+</header>
     </>
   )
 }

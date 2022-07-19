@@ -1,5 +1,6 @@
 import React from "react";
 import { createContext, useState } from "react";
+import swal from 'sweetalert';
 
 export const cartContext = createContext([]);
 
@@ -23,7 +24,7 @@ export function CartProvider({ children }) {
 
     if(auxCart[indx].quantity + quantity > item.stock) {
       return(
-        alert("No hay suficiente stock")
+        swal("Lo Siento :(", "No hay suficiente stock disponible", "error")
       )
     }
 
@@ -35,8 +36,7 @@ export function CartProvider({ children }) {
   };
 
   const removeItem = (itemId) => {
-    //el filter recorre el array y devuelve uno nuevo segun la cond. que se le pone
-    const nuevoArray = cart.filter((prod) => prod.id !== itemId); //es un nuevo array sin el item encontrado
+    const nuevoArray = cart.filter((prod) => prod.id !== itemId); 
     setCart(nuevoArray);
   };
 
