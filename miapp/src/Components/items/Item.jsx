@@ -3,7 +3,7 @@ import './ItemListContainer.css'
 import { Link } from 'react-router-dom'
 
 export default function Item({item}) {
-
+  console.log(item)
   return (
     <div className ="card" style={{width: "18rem"}} >
     <img src={item.pictureUrl} className="card-img-top" alt="..."/>

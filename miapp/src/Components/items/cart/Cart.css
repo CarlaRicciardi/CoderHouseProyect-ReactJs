@@ -12,7 +12,7 @@
 }
 
 .ctable-container {
-    border: 0.8px solid var(--primary-color);
+    border: 0.8px solid var(#2f4858);
     margin: 1rem .8rem;
     display: flex;
     gap: 10rem;
@@ -32,4 +32,11 @@
 
 .img-cart {
     width: 5.5rem;
+}
+
+.boton{
+    color: #2f4858;
+    background-color: #f6ae2d;
+    border: none;
+    justify-content: center;
 }

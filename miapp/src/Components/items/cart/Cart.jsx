@@ -6,7 +6,9 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 
 export default function Cart() {
-   const {cart, removeItem, clear ,total, cantidad, precioTotalCarrito} = useContext(cartContext);
+   const {cart, removeItem, clear} = useContext(cartContext);
+
+   const total = cart.reduce((previous, item)=> previous + (item.price * item.quantity), 0)
 
   return (
     <div>
@@ -21,7 +23,7 @@ export default function Cart() {
         cart.map((item)=> (
           <div key={ item.id } className='ctable-container'>
             <div className='ctable-item'>
-              <img className='img-cart' src={`/assets/img/${item.image}`}/>
+              <img className='img-cart' src={item.pictureUrl}/>
             </div>
             <div className='ctable-item'>
               <h3>Producto</h3>
@@ -50,9 +52,10 @@ export default function Cart() {
             &&
 
             <div className='total-container'>
-                <h4 className='cart-total'> Total: ${precioTotalCarrito} </h4>
-                <button className="btn-primary">Comprar</button>
-                <button className="btn-primary" onClick={clear}>Vaciar carrito</button>
+                <h4 className='cart-total'> Total: ${total} </h4>
+                <button className='btn btn-primary boton'>Comprar</button>
+                
+                <button className='btn btn-primary boton' style={{marginLeft: "15px"}} onClick={clear}>Vaciar carrito</button>
             </div>
 
         }

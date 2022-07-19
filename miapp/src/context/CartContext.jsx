@@ -6,7 +6,6 @@ export const cartContext = createContext([]);
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [numCarrito, setNumCarrito] = useState(0);
-  const [precioTotalCarrito, setPrecioTotalCarrito] = useState(0);
 
   const clear = () => {
     setCart([]);
@@ -19,15 +18,20 @@ export function CartProvider({ children }) {
   const addItem = (item, quantity) => {
   
   if(isInCart(item.id)){
-    //producto existe
-    let auxCart = cart; //hago una copia de mi carrito actual
-    let indx = auxCart.findIndex(element=> element.id == item.id); //busco index del producto por id
-    auxCart[indx].quantity = Number(auxCart[indx].quantity) + Number(quantity);  // sumo quantity al valor que vino en el onAdd.
-    setCart([...auxCart]); //seteo todo el array de nuevo pero modificado
+    let auxCart = cart; 
+    let indx = auxCart.findIndex(element=> element.id === item.id); 
+
+    if(auxCart[indx].quantity + quantity > item.stock) {
+      return(
+        alert("No hay suficiente stock")
+      )
+    }
+
+    auxCart[indx].quantity = Number(auxCart[indx].quantity) + Number(quantity);  
+    setCart([...auxCart]); 
   }else{
     setCart([...cart, {...item, quantity}])
   }
-  setPrecioTotalCarrito(precioTotalCarrito + item.price * item.cantidad)
   };
 
   const removeItem = (itemId) => {
@@ -36,17 +40,10 @@ export function CartProvider({ children }) {
     setCart(nuevoArray);
   };
 
-  const total = () => {
-    return cart.reduce((acum, item) => acum = acum + (item.price * item.cantidad), 0);
- }
-
-const cantidad = () => {
-     return cart.reduce((acum, item) => acum += item.cantidad, 0);
- } 
 
   return (
     <cartContext.Provider
-      value={{ cart, clear, addItem, removeItem, numCarrito, total, cantidad, precioTotalCarrito }}
+      value={{ cart, clear, addItem, removeItem, numCarrito}}
     >
       {children}
     </cartContext.Provider>

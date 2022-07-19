@@ -12,16 +12,16 @@ export default function ItemDetailContainer() {
 
   useEffect(() => {
     const db = getFirestore();
-    const docRef = doc(db, 'items', 'Gd8zZGeZOaFyeAtvge41')
+    const docRef = doc(db, 'items', idItem)
     getDoc(docRef).then((result) => {
-      const item = {...result.data(), id: result.id};
-      console.log(item)
+      const myItem = {...result.data(), id: result.id};
+      setItem(myItem);
     }).catch((err) => {
         setError(true);
     }).finally(() => {
         setLoading(false);
     })
-  }, [])
+  }, [idItem])
     
 
   return (

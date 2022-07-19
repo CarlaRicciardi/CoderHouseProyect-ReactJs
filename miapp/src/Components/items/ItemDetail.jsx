@@ -12,7 +12,7 @@ export default function ItemDetail({item}) {
     addItem(item, count);
   }
 
-  
+  console.log(item)
   return (
     <>
     <div className="card mb-3" style={{maxWidth: "1000px", padding: "50px"}}>
