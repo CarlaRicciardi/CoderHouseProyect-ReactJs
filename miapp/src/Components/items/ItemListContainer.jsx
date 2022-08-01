@@ -3,9 +3,11 @@ import './ItemListContainer.css'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 import Slider from '../slider/Slider';
-import {collection, getDocs, getFirestore} from 'firebase/firestore';
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
+
 
 export default function ItemListContainer() {
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [items, setItems] = useState([]);
@@ -13,7 +15,9 @@ export default function ItemListContainer() {
 
 useEffect(() => {
   const db = getFirestore();
-  const collectionAlimentos = collection(db, 'items')
+  const collectionAlimentos =  idCategory ? query(collection(db, 'items'),
+  where('category', '==', idCategory)) : collection(db, 'items');
+
   getDocs(collectionAlimentos).then((result) => {
     const auxArray = result.docs.map((item) => ({...item.data(), id: item.id}));
     setItems(auxArray);
@@ -22,7 +26,7 @@ useEffect(() => {
   }).finally(() => {
       setLoading(false);
   })
-}, [])
+}, [idCategory])
 
   return (
     <>
@@ -32,7 +36,6 @@ useEffect(() => {
       {loading && "Loading..."}
       {error && "ERROR: algo salio mal"}
       {items && <ItemList items={items} />}
-      
     </div>
     </>
 

@@ -24,15 +24,15 @@ export default function NavBar() {
           </a>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li> <Link to={"/category/perro"} className="dropdown-item">Alimentos para Perros</Link></li>
-            <li> <Link to={"category/gato"}className="dropdown-item">Alimentos para Gatos</Link></li>
+            <li> <Link to={"/category/gato"}className="dropdown-item">Alimentos para Gatos</Link></li>
             <li className="dropdown-divider"></li>
           </ul>
         </li>
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Nosotros</a>
+          <Link to={'/nosotros'} className="nav-link active" aria-current="page">Nosotros</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contacto</a>
+        <Link to={'/contacto'} className="nav-link active" aria-current="page">Contacto</Link>
         </li>        
       </ul>
       <CartWidget />

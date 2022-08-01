@@ -53,11 +53,9 @@ export default function Cart() {
 
             <div className='total-container'>
                 <h4 className='cart-total'> Total: ${total} </h4>
-                <button className='btn btn-primary boton'>Comprar</button>
-                
+                <Link to={'/checkout'}><button className='btn btn-primary boton'>Comprar</button></Link>
                 <button className='btn btn-primary boton' style={{marginLeft: "15px"}} onClick={clear}>Vaciar carrito</button>
             </div>
-
         }
 
     </div>
