@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import Slider from '../slider/Slider';
 import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore';
 
 
@@ -31,7 +30,7 @@ useEffect(() => {
   return (
     <>
     <div>
-      <Slider />
+      <img src="/assets/img/slider2-02.jpg" style={{width: '100%'}} alt="" />
       <h2 className='title'>NUESTROS PRODUCTOS</h2>
       {loading && "Loading..."}
       {error && "ERROR: algo salio mal"}
