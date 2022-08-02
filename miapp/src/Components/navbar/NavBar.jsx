@@ -3,7 +3,6 @@ import React from 'react';
 import './NavBar.css';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
-import Slider from '../slider/Slider';
 
 
 export default function NavBar() {

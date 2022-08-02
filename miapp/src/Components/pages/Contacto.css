@@ -1,0 +1,31 @@
+.parrafoContacto{
+    color: #2f4858;
+    text-align: center;
+    font-weight: 500;
+}
+
+.iconsRedes{
+    text-align: center;    
+}
+
+.iconsHover{
+	transition: all 2s;
+}
+
+.iconsHover:hover{
+	transform: translateY(-20px);
+}
+
+.redes-icon{
+    color: #f6ae2d;
+    text-align: center;
+    margin: 0.8rem 0.8rem 0 0.3rem;
+    cursor: pointer;
+}
+
+.imgContacto{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 50px;
+}

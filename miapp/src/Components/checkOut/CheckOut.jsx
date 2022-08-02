@@ -25,7 +25,7 @@ export default function CheckOut() {
         let emailRegex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
 
         if(!nameRegex.test(name) || !phoneRegex.test(phone) || !emailRegex.test(email)) {
-            swal(`Error!`, `Por favor completa el formulario` , `error`);
+            swal(`Error!`, `Por favor completa el formulario correctamente` , `error`);
             return;
         }
                 
