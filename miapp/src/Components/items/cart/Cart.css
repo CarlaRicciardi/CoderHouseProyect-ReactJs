@@ -61,4 +61,10 @@
         margin: 0;
         justify-content: center;
     }
+
+    .alinear{
+        display: flex;
+        flex-direction: row;
+    }
+    
 }

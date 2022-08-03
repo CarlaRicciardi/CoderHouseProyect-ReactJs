@@ -39,6 +39,8 @@ export default function CheckOut() {
         setName('')
         setPhone('')
         setEmail('')
+        clear()
+
     }
 
   return (
